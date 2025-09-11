@@ -44,3 +44,23 @@ const onScroll = ()=>{
 window.addEventListener('scroll', onScroll);
 toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 onScroll();
+// ----- 네비 그림자 토글 -----
+const siteNav = document.getElementById('siteNav');
+const paintShadow = () => siteNav?.classList.toggle('is-stuck', window.scrollY > 8);
+paintShadow();
+window.addEventListener('scroll', paintShadow, { passive: true });
+
+// ----- 스크롤 스파이 -----
+const links = document.querySelectorAll('.nav_links a[href^="#"]');
+const map = new Map([...links].map(a => [a.getAttribute('href').slice(1), a]));
+const sections = [...document.querySelectorAll('main section[id]')];
+
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    map.forEach((a, key) => a.classList.toggle('active', key === id));
+  });
+}, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+sections.forEach(s => spy.observe(s));

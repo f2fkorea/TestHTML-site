@@ -14,10 +14,10 @@
 </head>
 <body>
   <!-- 상단 네비 -->
-  <header class="nav">
+  <header id="siteNav" class="nav">
     <div class="nav__inner">
       <a class="brand" href="#">My Card</a>
-      <nav class="nav__links">
+     <nav class="nav_links">
         <a href="#about">소개</a>
         <a href="#projects">프로젝트</a>
         <a href="#gallery">갤러리</a>
@@ -116,12 +116,12 @@
       <h2 class="section__title">갤러리</h2>
       <div class="gallery">
         <!-- 데모용으로 같은 이미지 사용 (원하면 다른 이미지로 교체) -->
-        <img src="profile.jpg" alt="갤러리 이미지 1">
-        <img src="profile.jpg" alt="갤러리 이미지 2">
-        <img src="profile.jpg" alt="갤러리 이미지 3">
-        <img src="profile.jpg" alt="갤러리 이미지 4">
-        <img src="profile.jpg" alt="갤러리 이미지 5">
-        <img src="profile.jpg" alt="갤러리 이미지 6">
+       <img src="profile.jpg" alt="갤러리 이미지 1" loading="lazy">
+        <img src="profile.jpg" alt="갤러리 이미지 2" loading="lazy">
+        <img src="profile.jpg" alt="갤러리 이미지 3" loading="lazy">
+        <img src="profile.jpg" alt="갤러리 이미지 4" loading="lazy">
+        <img src="profile.jpg" alt="갤러리 이미지 5" loading="lazy">
+        <img src="profile.jpg" alt="갤러리 이미지 6" loading="lazy">
       </div>
     </section>
 
@@ -154,6 +154,6 @@
   <!-- 맨 위로 버튼 -->
   <button id="toTop" class="to-top" aria-label="맨 위로">↑</button>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
