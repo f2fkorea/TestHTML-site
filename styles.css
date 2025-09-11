@@ -1,0 +1,189 @@
+:root{
+  --bg: #f4f4f9;
+  --text: #1b1f23;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --card-bg:#ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --shadow-soft: 0 20px 60px rgba(0,0,0,.06);
+  --radius: 16px;
+}
+
+:root.dark{
+  --bg:#0f172a;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#60a5fa;
+  --card-bg:#0b1220;
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+  --shadow-soft: 0 20px 60px rgba(0,0,0,.35);
+}
+
+*{ box-sizing: border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: 'Noto Sans KR', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1000px 600px at 10% -10%, rgba(99,255,220,.35), transparent),
+    radial-gradient(1000px 600px at 110% 10%, rgba(147,197,253,.35), transparent),
+    linear-gradient(180deg, var(--bg), var(--bg));
+}
+/* 제목류만 Montserrat */
+h1, h2, h3, .section-title {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+/* 네비 */
+.nav{
+  position: sticky; top:0; z-index: 10;
+  backdrop-filter: blur(8px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--bg) 70%, #0000);
+}
+.nav__inner{
+  max-width: 1080px; margin:0 auto; padding:12px 20px;
+  display:flex; align-items:center; gap:16px; justify-content: space-between;
+}
+.brand{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; text-decoration:none; color:var(--text);
+}
+.nav__links{ display:flex; gap:14px; }
+.nav__links a{
+  color:var(--muted); text-decoration:none; font-weight:500;
+}
+.nav__links a:hover{ color:var(--text); }
+
+/* 공통 컨테이너 */
+.container{ max-width:1080px; margin:40px auto; padding:0 20px; }
+
+/* 카드 */
+.card{
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(24px, 5vw, 48px);
+  max-width: 520px; margin: 64px auto;
+  text-align:center;
+}
+.avatar{
+  width: 160px; height:160px; border-radius:50%;
+  object-fit: cover; display:block; margin:0 auto 16px;
+  box-shadow: var(--shadow);
+}
+.title{
+  font-family:'Montserrat', sans-serif;
+  font-size: clamp(24px, 3vw, 28px); margin: 6px 0 8px;
+}
+.subtitle{ color:var(--muted); margin:0 0 18px; }
+
+/* 버튼 묶음 */
+.btns{ display:grid; gap:12px; }
+.btn{
+  --bg: var(--accent);
+  display:inline-grid; place-items:center;
+  padding:14px 16px; border-radius:12px;
+  color:#fff; text-decoration:none; font-weight:700; letter-spacing:.2px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  transform: translateZ(0);
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0) scale(.98); }
+.btn--github{ --bg:#0f172a; }
+.btn--google{ --bg:#ea4335; }
+.btn--naver{  --bg:#03c75a; }
+
+.btn--icon{
+  background:var(--card-bg); color:var(--text);
+  padding:10px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--bg) 70%, #0000);
+}
+
+/* 섹션 공통 */
+.section{ padding:56px 16px; max-width:1080px; margin:0 auto; }
+.section__title{
+  font-family:'Montserrat', sans-serif;
+  font-size: clamp(20px, 2.6vw, 28px); margin:0 0 16px;
+}
+
+/* 소개 레이아웃 */
+.about{
+  display:grid; gap:20px; grid-template-columns: 1.2fr .8fr;
+  background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 24px;
+}
+.about__text{ line-height:1.7; color:var(--text); }
+.bullets{ margin:12px 0 0 16px; }
+.bullets li{ margin:6px 0; color:var(--muted); }
+.about__aside{ display:grid; gap:12px; align-content:start; }
+.stat{
+  background: color-mix(in oklab, var(--card-bg), #000 6%);
+  border-radius: 12px; padding:16px; text-align:center;
+  box-shadow: var(--shadow);
+}
+.stat strong{ font-size:24px; display:block; }
+
+/* 프로젝트 그리드 */
+.grid{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.proj-card{
+  background: var(--card-bg); border-radius: 14px; padding:18px;
+  box-shadow: var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.proj-card:hover{ transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,.12); }
+.proj-card h3{ margin:0 0 6px; font-size:18px; }
+.proj-card p{ margin:0; color:var(--muted); }
+
+/* 갤러리 */
+.gallery{
+  display:grid; gap:10px;
+  grid-template-columns: repeat(6, 1fr);
+}
+.gallery img{
+  width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease;
+}
+.gallery img:hover{ transform: scale(1.03); }
+
+/* 블로그 */
+.blog-list{ display:grid; gap:12px; }
+.blog-item{
+  display:flex; justify-content:space-between; align-items:center;
+  background: var(--card-bg); border-radius:12px; padding:16px 18px;
+  text-decoration:none; color:var(--text); box-shadow: var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.blog-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,.12); }
+.blog-item h3{ margin:0; font-size:16px; }
+.blog-item time{ color:var(--muted); font-size:14px; }
+
+/* 스크롤 리빌 */
+.reveal{ opacity:0; transform: translateY(18px); }
+.reveal.show{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
+
+/* 맨 위로 버튼 */
+.to-top{
+  position:fixed; right:16px; bottom:16px; width:44px; height:44px;
+  border-radius:999px; color:#fff; background:#111; border:0;
+  box-shadow: var(--shadow); opacity:0; pointer-events:none; transition: .25s ease;
+}
+.to-top.show{ opacity:.95; pointer-events:auto; }
+
+/* 반응형 */
+@media (max-width: 992px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+  .gallery{ grid-template-columns: repeat(4, 1fr); }
+  .about{ grid-template-columns: 1fr; }
+}
+@media (max-width: 640px){
+  .card{ margin: 40px auto; }
+  .grid{ grid-template-columns: 1fr; }
+  .gallery{ grid-template-columns: repeat(2, 1fr); }
+  .nav__links{ display:none; }
+}

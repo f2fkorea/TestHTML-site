@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Card</title>
+
+  <!-- Google Fonts: 본문(Noto Sans KR) + 제목(Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 상단 네비 -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#">My Card</a>
+      <nav class="nav__links">
+        <a href="#about">소개</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#gallery">갤러리</a>
+        <a href="#blog">블로그</a>
+        <a href="#contact">연락처</a>
+      </nav>
+      <button id="themeToggle" class="btn btn--icon" aria-label="테마 전환">🌙</button>
+    </div>
+  </header>
+
+  <!-- 히어로 카드 -->
+  <main class="container">
+    <section class="card reveal" aria-label="프로필">
+      <img class="avatar" src="profile.jpg" alt="프로필 사진" />
+      <h1 class="title">홍길동</h1>
+      <p class="subtitle">웹 개발자 & 디자이너</p>
+
+      <div class="btns">
+        <a class="btn btn--github" href="https://github.com" target="_blank" rel="noopener">GitHub 방문</a>
+        <a class="btn btn--google" href="https://google.com" target="_blank" rel="noopener">Google 방문</a>
+        <a class="btn btn--naver"  href="https://naver.com"  target="_blank" rel="noopener">Naver 방문</a>
+      </div>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="section reveal">
+      <h2 class="section__title">소개</h2>
+      <div class="about">
+        <div class="about__text">
+          <p>간결한 UI, 튼튼한 구조, 빠른 퍼포먼스를 좋아합니다. HTML/CSS/JS로 시작해, 점점 컴포넌트 기반과 접근성까지 넓혀가고 있어요.</p>
+          <ul class="bullets">
+            <li>관심사: 웹 성능, 접근성, 반응형 UI</li>
+            <li>툴킷: VS Code, Git/GitHub, Figma</li>
+            <li>목표: 심플하고 재사용 가능한 코드</li>
+          </ul>
+        </div>
+        <div class="about__aside">
+          <div class="stat">
+            <strong>3+</strong>
+            <span>Side Projects</span>
+          </div>
+          <div class="stat">
+            <strong>10+</strong>
+            <span>UI 컴포넌트</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" class="section reveal">
+      <h2 class="section__title">프로젝트</h2>
+      <div class="grid">
+       <div class="grid">
+  <!-- 1. 반응형 랜딩 페이지 -->
+  <a class="proj-card" href="https://example.com/landing" target="_blank" rel="noopener">
+    <strong>반응형 랜딩 페이지</strong><br />
+    HTML/CSS/JS로 제작 · 모바일 최적화 · 폼 제출/유효성 검증
+  </a>
+
+  <!-- 2. 이미지 갤러리 -->
+  <a class="proj-card" href="https://example.com/gallery" target="_blank" rel="noopener">
+    <strong>이미지 갤러리</strong><br />
+    CSS Grid · Lazy Loading · 라이트박스(모달) 보기
+  </a>
+
+  <!-- 3. 접근성 고려 폼 -->
+  <a class="proj-card" href="https://example.com/form-a11y" target="_blank" rel="noopener">
+    <strong>폼 유효성/접근성</strong><br />
+    ARIA 라벨 · 키보드 내비게이션 · 실시간 오류 메시지
+  </a>
+
+  <!-- 4. 카드 컴포넌트 컬렉션 (GitHub 레포 예시) -->
+  <a class="proj-card" href="https://github.com/your-id/card-components" target="_blank" rel="noopener">
+    <strong>카드 컴포넌트 컬렉션</strong><br />
+    버튼/배지/토글/모달 등 UI 조각 모음 (재사용 가능)
+  </a>
+
+  <!-- 5. 네비게이션 데모 -->
+  <a class="proj-card" href="https://example.com/nav-demo" target="_blank" rel="noopener">
+    <strong>네비게이션 데모</strong><br />
+    스크롤 스파이 · 스무스 스크롤 · 현재 섹션 하이라이트
+  </a>
+
+  <!-- 6. 다크모드 토글 저장 -->
+  <a class="proj-card" href="https://example.com/theme-toggle" target="_blank" rel="noopener">
+    <strong>테마 토글(다크/라이트)</strong><br />
+    LocalStorage 상태 유지 · 아이콘 애니메이션
+  </a>
+</div>
+      </div>
+    </section>
+
+    <!-- 갤러리 섹션 -->
+    <section id="gallery" class="section reveal">
+      <h2 class="section__title">갤러리</h2>
+      <div class="gallery">
+        <!-- 데모용으로 같은 이미지 사용 (원하면 다른 이미지로 교체) -->
+        <img src="profile.jpg" alt="갤러리 이미지 1">
+        <img src="profile.jpg" alt="갤러리 이미지 2">
+        <img src="profile.jpg" alt="갤러리 이미지 3">
+        <img src="profile.jpg" alt="갤러리 이미지 4">
+        <img src="profile.jpg" alt="갤러리 이미지 5">
+        <img src="profile.jpg" alt="갤러리 이미지 6">
+      </div>
+    </section>
+
+    <!-- 블로그 섹션 -->
+    <section id="blog" class="section reveal">
+      <h2 class="section__title">블로그</h2>
+      <div class="blog-list">
+        <a class="blog-item" href="#" aria-label="글 보기">
+          <h3>디자인 토큰으로 스타일 정리하기</h3>
+          <time datetime="2025-08-01">2025.08.01</time>
+        </a>
+        <a class="blog-item" href="#" aria-label="글 보기">
+          <h3>반응형 그리드, 언제 어떤 단위를 쓸까</h3>
+          <time datetime="2025-08-18">2025.08.18</time>
+        </a>
+        <a class="blog-item" href="#" aria-label="글 보기">
+          <h3>스크롤 리빌 애니메이션 정말 간단하게</h3>
+          <time datetime="2025-09-02">2025.09.02</time>
+        </a>
+      </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="section reveal">
+      <h2 class="section__title">연락처</h2>
+      <p>이메일: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+  </main>
+
+  <!-- 맨 위로 버튼 -->
+  <button id="toTop" class="to-top" aria-label="맨 위로">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
