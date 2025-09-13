@@ -1,4 +1,6 @@
 # TestHTML
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-2563eb)](https://f2fkorea.github.io/TestHTML-site/)  [![pages-build-deployment](https://github.com/f2fkorea/TestHTML-site/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/f2fkorea/TestHTML-site/actions/workflows/pages/pages-build-deployment)
+
 개인 카드/포트폴리오 연습 프로젝트
 
 ## 미리보기
